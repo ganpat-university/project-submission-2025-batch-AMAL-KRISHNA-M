@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="header">Sentiment Analysis</div>
+    <div class="content">
+        <div class="auth-section">
+            <div class="auth-box">
+                <div *ngIf="message" class="alert" [ngClass]="{'alert-success': messageType === 'success', 'alert-error': messageType === 'error'}">
+                    {{ message }}
+                </div>
+
+                <!-- Login Form -->
+                <div id="login-form" *ngIf="showLoginForm">
+                    <h2>Login</h2>
+                    <input type="text" placeholder="Email" [(ngModel)]="email" required>
+                    <input type="password" placeholder="Password" [(ngModel)]="password" required>
+                    <div class="remember">
+                        <div class="checkbox-wrapper">
+                            <label for="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                            <input type="checkbox" id="remember" [(ngModel)]="rememberMe">
+                            <label for="remember">Remember Me</label>
+                        </div>
+                    </div>
+                    
+                    <button (click)="login()">Login</button>
+
+                    <!-- Google Sign-In Button -->
+                    <button (click)="loginWithGoogle()" class="google-btn">
+                        Sign in with Google
+                    </button>
+                    <!-- Below the Google button -->
+                    <div class="forgot-password-link">
+                        <a [routerLink]="['/forgot-password']">Forgot Password?</a>
+                    </div>
+                    <span class="toggle-link" (click)="toggleForm()">Don't have an account? Register</span>
+                </div>
+
+                <!-- Register Form -->
+                <div id="register-form" *ngIf="!showLoginForm">
+                    <h2>Register</h2>
+                    <input type="email" placeholder="Email" [(ngModel)]="registerEmail" required>
+                    <input type="password" placeholder="Password" [(ngModel)]="registerPassword" required>
+                    <input type="password" placeholder="Confirm Password" [(ngModel)]="registerConfirmPassword" required>
+                    <input type="tel" placeholder="Phone number" [(ngModel)]="registerPhoneNumber" required>
+
+                    <div class="remember">
+                        <input type="checkbox" id="terms" [(ngModel)]="termsAccepted">
+                        <label for="terms">
+                            I agree to the <a href="/terms" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
+                        </label>
+                    </div>
+
+                    <button (click)="register()">Register</button>
+
+                    <!-- MFA Component for Verification -->
+                    <app-mfa
+                        *ngIf="isVerifyingPhone"
+                        [phoneNumber]="registerPhoneNumber"
+                        (verificationSuccess)="onMfaSuccess()"
+                        (verificationFailed)="onMfaFailed($event)"
+                    ></app-mfa>
+
+                    <span class="toggle-link" (click)="toggleForm()">Already have an account? Login</span>
+                </div>
+            </div>
+        </div>
+        <div class="image-section"></div>
+    </div>
+</div>

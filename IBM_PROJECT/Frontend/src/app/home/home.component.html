@@ -1,0 +1,26 @@
+<body>
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <a [routerLink]="['/home']">Upload Data</a>
+    <a [routerLink]="['/dashboard']">Dashboard</a>
+  </div>
+
+  <div class="content">
+    <div class="content-container">
+      <div class="upload-section">
+        <h2>Analyze Your Data</h2>
+
+        <input type="file" (change)="onFileSelected($event)" accept=".csv" />
+        <br />
+        <button (click)="analyzeSentiment()" [disabled]="loading">
+          <span *ngIf="loading" class="loader"></span> <!-- Loading Spinner -->
+          <span *ngIf="!loading">Analyze Sentiment</span>
+        </button>
+
+        <div *ngIf="uploadMessage" [ngStyle]="{'color': messageColor}" class="upload-message">
+          {{ uploadMessage }}
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/sentiment_analysis_application/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

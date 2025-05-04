@@ -1,0 +1,12 @@
+<div class="mfa-container">
+    <div id="recaptcha-container"></div>
+    <!-- Button to send code - only shows before the code is sent -->
+    <button (click)="sendVerificationCode()" *ngIf="!codeSent">Send Verification Code</button>
+    
+    <!-- Show this section only if the code is sent -->
+    <div *ngIf="codeSent">
+      <input type="text" [(ngModel)]="verificationCode" placeholder="Enter verification code" />
+      <button (click)="verifyCode(verificationCode)">Verify Code</button>
+    </div>
+</div>
+  

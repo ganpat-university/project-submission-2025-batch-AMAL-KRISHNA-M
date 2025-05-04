@@ -1,0 +1,43 @@
+/* MFA Container */
+.mfa-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Input Field */
+.mfa-container input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Button Styling */
+.mfa-container button {
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.mfa-container button:hover {
+    background-color: #45a049;
+}
+
+/* Code Verification Section */
+.mfa-container div {
+    margin-top: 10px;
+}

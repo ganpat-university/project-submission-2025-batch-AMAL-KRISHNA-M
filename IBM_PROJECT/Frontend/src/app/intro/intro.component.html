@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Application G11</title>
+    <link rel="icon" type="image/x-icon" href="project.ico">
+    <!-- Importing Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">SentimentApp G11</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section class="intro-container">
+        <h1>Welcome to SentimentApp G11</h1>
+        <p>Understand emotions behind the words with our advanced sentiment analysis tool.</p>
+        <button (click)="goToLogin()">Continue to Login</button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="content-container">
+            <h2>About Us</h2>
+        <p>SentimentApp G11 is a cutting-edge application designed to analyze and interpret the sentiment of textual data, helping businesses and individuals make informed decisions based on emotional insights.</p>
+        </div>
+    </section>
+    
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="content-container">
+            <h2>Features</h2>
+            <ul>
+                <li>Real-time sentiment analysis</li>
+                <li>Comprehensive reports and analytics</li>
+                <li>Easy integration with existing platforms</li>
+                <li>Customizable dashboards</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="content-container">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial">
+                <p>"SentimentApp G11 transformed the way we understand customer feedback. It's intuitive and incredibly insightful." - Alex P.</p>
+            </div>
+            <div class="testimonial">
+                <p>"A must-have tool for any business looking to delve deeper into sentiment analysis." - Jamie L.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section">
+        <div class="content-container">
+            <h2>Contact Us</h2>
+            <p>Have questions or need assistance? Reach out to us, and we'll be happy to help!</p>
+            <form action="https://formsubmit.co/7dcfbb7f874fb8d6093ec2ebd6d04d81" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 SentimentApp G11. All rights reserved.</p>
+    </footer>
+</body>
+</html>

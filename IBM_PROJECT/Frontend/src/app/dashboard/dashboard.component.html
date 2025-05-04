@@ -1,0 +1,82 @@
+<body>
+  <!-- Spinner overlay -->
+  <div *ngIf="loading" class="spinner-overlay">
+    <div class="spinner-container">
+      <div class="loader"></div>
+      <p>Loading your dashboard...</p>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="dashboard-wrapper" *ngIf="!loading">
+    <div class="sidebar">
+      <h2>Menu</h2>
+      <a [routerLink]="['/home']">Upload Data</a>
+      <a [routerLink]="['/dashboard']">Dashboard</a>
+    </div>
+
+    <div class="content">
+      <div class="header">
+        <h1>DASHBOARD</h1>
+        <button class="logout-btn" (click)="logout()">Logout</button>
+      </div>
+
+      <div class="dashboard-header">
+        <h2>{{ productName }}</h2>
+        <p class="rating">⭐ {{ averageRating }}/5</p>
+        <button class="refresh-btn" (click)="refreshStats()">Refresh Stats</button>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="box total-reviews-box">
+          <span>Total Reviews</span>
+          <span class="stat-number">{{ totalReviews }}</span>
+        </div>    
+        <div class="box">
+          <span>Positive Reviews</span>
+          <div class="chart-container">
+            <div echarts [options]="positiveChartOptions" class="echart"></div>
+          </div>
+        </div>
+        <div class="box">
+          <span>Neutral Reviews</span>
+          <div class="chart-container">
+            <div echarts [options]="neutralChartOptions" class="echart"></div>
+          </div>
+        </div>
+        <div class="box">
+          <span>Negative Reviews</span>
+          <div class="chart-container">
+            <div echarts [options]="negativeChartOptions" class="echart"></div>
+          </div>
+        </div>
+      </div>    
+
+      <div class="reviews">
+        <h2>Reviews</h2>
+        <div class="review-category">
+          <h3>Positive Reviews</h3>
+          <div class="review-list">
+            <p *ngFor="let review of positiveReviews">{{ review.review_text | linebreak }}</p>
+          </div>
+        </div>
+        <div class="review-category">
+          <h3>Negative Reviews</h3>
+          <div class="review-list">
+            <p *ngFor="let review of negativeReviews">{{ review.review_text | linebreak }}</p>
+          </div>
+        </div>
+        <div class="review-category">
+          <h3>Neutral Reviews</h3>
+          <div class="review-list">
+            <p *ngFor="let review of neutralReviews">{{ review.review_text | linebreak }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="word-cloud-box">
+        <h2>Word Cloud</h2>
+        <canvas #wordCloudCanvas width="600" height="400"></canvas>
+      </div>    
+    </div>
+  </div>
+</body>
