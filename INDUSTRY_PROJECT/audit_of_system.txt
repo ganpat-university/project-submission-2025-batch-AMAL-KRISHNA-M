@@ -1,0 +1,10 @@
+1. No password in the system.
+2. OS version unsupported(Windows 7), Microsoft ended support for Windows 7 on January 14, 2020.
+3. No immediate Logout after leaving the workstation.
+4. Lack of a TPM.
+5. Firewall is on.
+6. Lack of an Anti-Virus.
+7. Lack of proper password policy.
+8. Lack of lockout policy for account.
+9. User rights section [Access the computer from the network=Everyone.]
+10. No auditing setup.
